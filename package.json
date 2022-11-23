@@ -19,6 +19,9 @@
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.4.0",
+    "@tailwindcss/typography": "^0.5.8",
+    "@types/dompurify": "^2.4.0",
+    "@types/marked": "^4.0.7",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.19",
     "prettier": "^2.7.1",

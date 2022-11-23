@@ -28,17 +28,17 @@ export default function Post({
               r/{subreddit}
             </Link>
             {/* author */}
-            <span className="text-neutral-200">
+            <span className="text-neutral-400">
               Posted by{" "}
               <Link href={`/user/${author}`} className="z-10">
                 u/{author}
               </Link>
             </span>
             {/* time */}
-            <span className="text-neutral-200">{time}</span>
+            <span className="text-neutral-400">{time}</span>
           </div>
           {/* body text */}
-          <div className="font-medium">{bodyText}</div>
+          <div className="text-lg font-medium">{bodyText}</div>
           {/* media */}
           {mediaSrc ? (
             <div>
@@ -46,7 +46,7 @@ export default function Post({
             </div>
           ) : null}
           {/* footer */}
-          <div className="flex items-baseline gap-2 text-sm text-neutral-200">
+          <div className="flex items-baseline gap-2 text-sm text-neutral-400">
             <span>{numComments} comments</span>
           </div>
         </div>

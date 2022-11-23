@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <nav className="flex flex-wrap items-center justify-between bg-neutral-800 p-1">
+    <nav className="flex flex-wrap items-center justify-between bg-neutral-800 p-2">
       <ul>
         {/* logo */}
         <li className="text-xl font-bold text-primary-400">Predd</li>
