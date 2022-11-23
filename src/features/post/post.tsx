@@ -1,15 +1,7 @@
-import { Link } from "preact-router/match";
+import { Link } from "wouter";
+import { IPost } from "/src/features/post/post.type";
 
-interface IProps {
-  subreddit?: string;
-  author?: string;
-  time?: string;
-  bodyText?: string;
-  score?: string;
-  numComments?: string;
-  mediaSrc?: string;
-  postUrl?: string;
-}
+interface IProps extends IPost {}
 
 export default function Post({
   subreddit,
@@ -24,7 +16,7 @@ export default function Post({
   return (
     <Link href={postUrl} className="hover:no-underline">
       <div className="flex gap-1 rounded border border-neutral-700 bg-neutral-800 py-2 hover:cursor-pointer hover:border-neutral-600">
-        <div className="w-12 flex-none text-center text-sm font-bold text-primary-400">
+        <div className="w-10 flex-none text-center text-sm font-bold text-primary-400">
           {score}
         </div>
 

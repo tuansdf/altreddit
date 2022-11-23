@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  @apply focus:outline-none focus:outline-neutral-300;
+}
+
 a {
   @apply hover:underline;
 }

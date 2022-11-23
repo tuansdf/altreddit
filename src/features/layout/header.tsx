@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <nav className="flex flex-wrap items-center justify-between bg-neutral-800 p-2">
+    <nav className="flex flex-wrap items-center justify-between bg-neutral-800 p-1">
       <ul>
         {/* logo */}
         <li className="text-xl font-bold text-primary-400">Predd</li>
@@ -10,7 +10,7 @@ export default function Header() {
           <input
             type="search"
             placeholder="Search"
-            className="mt-2 w-full rounded bg-neutral-700 py-2 px-4 sm:mt-0"
+            className="mt-2 w-full rounded-full border border-neutral-600 bg-neutral-700 py-2 px-6 hover:border-neutral-500 sm:mt-0"
           />
         </li>
       </ul>
