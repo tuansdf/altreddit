@@ -4,11 +4,11 @@ import { marked } from "marked";
 import { JSX } from "preact";
 
 interface IProps extends JSX.HTMLAttributes<HTMLDivElement> {
-  text: string;
+  children: string;
 }
 
-export default function DisplayHtml({ text, className, ...rest }: IProps) {
-  const htmlContent = DOMPurify.sanitize(marked.parse(text));
+export default function DisplayHtml({ children, className, ...rest }: IProps) {
+  const htmlContent = DOMPurify.sanitize(marked.parse(children));
 
   return (
     <div

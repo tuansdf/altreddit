@@ -1,9 +1,18 @@
+import { Link } from "wouter";
+
 export default function Header() {
   return (
     <nav className="flex flex-wrap items-center justify-between bg-neutral-800 p-2">
       <ul>
         {/* logo */}
-        <li className="text-xl font-bold text-primary-400">Predd</li>
+        <li>
+          <Link
+            href="/"
+            className="text-xl font-bold text-primary-400 hover:no-underline"
+          >
+            Predd
+          </Link>
+        </li>
       </ul>
       <ul className="order-last w-full sm:order-none sm:w-auto">
         <li>

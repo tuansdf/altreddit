@@ -7,7 +7,7 @@ interface IProps {
 
 export default function Layout({ children }: IProps) {
   return (
-    <div className="min-h-screen bg-neutral-900 text-neutral-50">
+    <div className="min-h-screen bg-neutral-900 text-neutral-200">
       <Header />
 
       <div className="mx-auto mt-2 max-w-screen-sm px-2">{children}</div>
