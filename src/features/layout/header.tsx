@@ -32,7 +32,7 @@ export default function Header() {
             to="/"
             className="text-xl font-bold text-primary-400 hover:no-underline"
           >
-            Predd
+            altreddit
           </Link>
         </li>
         <li className="relative text-sm sm:text-base">
