@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import IndexLayout from "/src/pages/index.layout";
 import SubredditPage from "/src/pages/r_subreddit/subreddit.page";
+import SearchPage from "/src/pages/search.page";
 
 const router = createBrowserRouter([
   {
@@ -17,8 +18,15 @@ const router = createBrowserRouter([
       },
       {
         path: "r/:subreddit",
-        element: <SubredditPage />,
-        children: [{ path: ":sort", element: <SubredditPage /> }],
+        children: [
+          { index: true, element: <SubredditPage /> },
+          { path: "search", element: <SearchPage /> },
+          { path: ":sort", element: <SubredditPage /> },
+        ],
+      },
+      {
+        path: "search",
+        element: <SearchPage />,
       },
     ],
   },
