@@ -24,7 +24,7 @@ export default function Header() {
   );
 
   return (
-    <nav className="flex flex-wrap items-center justify-between bg-neutral-800 p-2">
+    <nav className="flex flex-wrap items-center justify-between border border-neutral-700 bg-neutral-800 p-1">
       <ul className="flex items-center gap-4">
         {/* logo */}
         <li>
