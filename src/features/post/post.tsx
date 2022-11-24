@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { IPost } from "/src/features/post/post.type";
 import DisplayHtml from "/src/features/shared/display-html";
 
@@ -17,9 +17,9 @@ export default function Post({
   postHint,
 }: IProps) {
   return (
-    <Link href={postUrl} className="hover:no-underline">
+    <Link to={postUrl} className="block hover:no-underline">
       <div className="flex gap-1 rounded border border-neutral-700 bg-neutral-800 py-2 hover:cursor-pointer hover:border-neutral-600">
-        <div className="w-10 flex-none text-center text-xs font-bold text-primary-400 sm:text-sm">
+        <div className="w-8 flex-none text-center text-xs font-bold sm:w-10 sm:text-sm">
           {score}
         </div>
 
@@ -27,13 +27,13 @@ export default function Post({
           {/* header */}
           <div className="flex items-baseline gap-2 text-xs sm:text-sm">
             {/* subreddit */}
-            <Link href={`/r/${subreddit}`} className="z-10 font-bold">
+            <Link to={`/r/${subreddit}`} className="z-10 font-bold">
               r/{subreddit}
             </Link>
             {/* author */}
             <span className="text-neutral-400">
               Posted by{" "}
-              <Link href={`/user/${author}`} className="z-10">
+              <Link to={`/user/${author}`} className="z-10">
                 u/{author}
               </Link>
             </span>
@@ -46,7 +46,9 @@ export default function Post({
           ) : null}
           {/* body text */}
           {bodyText ? (
-            <DisplayHtml className="pr-2">{bodyText || ""}</DisplayHtml>
+            <DisplayHtml className="prose-invert pr-2 text-sm sm:text-base">
+              {bodyText || ""}
+            </DisplayHtml>
           ) : null}
           {/* media */}
           {mediaSrc && postHint === "image" ? (

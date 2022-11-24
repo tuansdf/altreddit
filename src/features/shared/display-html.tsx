@@ -13,7 +13,7 @@ export default function DisplayHtml({ children, className, ...rest }: IProps) {
   return (
     <div
       dangerouslySetInnerHTML={{ __html: htmlContent }}
-      className={clsx("prose prose-invert prose-a:text-primary-400", className)}
+      className={clsx("prose prose-a:text-primary-400", className)}
       {...rest}
     ></div>
   );

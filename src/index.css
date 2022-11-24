@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  @apply focus:outline-none focus:outline-neutral-300;
+  @apply focus:outline-none focus:ring-1 focus:ring-neutral-300;
 }
 
 a {

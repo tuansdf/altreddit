@@ -26,7 +26,9 @@ export default function Comment({
             <span className="text-neutral-400">{time}</span>
           </div>
           {/* body */}
-          <DisplayHtml>{bodyText || ""}</DisplayHtml>
+          <DisplayHtml className="prose-invert text-sm sm:text-base">
+            {bodyText || ""}
+          </DisplayHtml>
           {/* footer */}
           <div className="text-sm">
             <span className="font-bold">{score}</span>

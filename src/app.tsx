@@ -1,20 +1,28 @@
-import useSubreddit from "/src/api/subreddit/use-subreddit.api";
-import Layout from "/src/features/layout/layout";
-import PostList from "/src/features/post/post-list";
-import PostListPlaceholder from "/src/features/post/post-list-placeholder";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
+import IndexLayout from "/src/pages/index.layout";
+import SubredditPage from "/src/pages/subreddit.page";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <IndexLayout />,
+    children: [
+      {
+        index: true,
+        element: <Navigate to="/r/all" />,
+      },
+      {
+        path: "/r/:subreddit",
+        element: <SubredditPage />,
+      },
+    ],
+  },
+]);
 
 export function App() {
-  const { data, isError, isLoading } = useSubreddit();
-
-  const posts = data?.data;
-
-  return (
-    <Layout>
-      {!isLoading || !!data ? (
-        <PostList posts={posts} />
-      ) : (
-        <PostListPlaceholder />
-      )}
-    </Layout>
-  );
+  return <RouterProvider router={router} />;
 }

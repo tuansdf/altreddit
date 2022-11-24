@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import useSWR from "swr";
 
 const fetcher = async (url: string): Promise<any> => {
@@ -6,11 +7,10 @@ const fetcher = async (url: string): Promise<any> => {
 };
 
 export default function useCommon() {
+  const location = useLocation();
+
   const { data, error } = useSWR(
-    "https://www.reddit.com" +
-      window.location.pathname +
-      ".json" +
-      window.location.search,
+    "https://www.reddit.com" + location.pathname + ".json" + location.search,
     fetcher
   );
 
