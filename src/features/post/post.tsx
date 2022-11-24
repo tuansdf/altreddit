@@ -25,14 +25,13 @@ export default function Post({
 
         <div className="flex flex-col gap-2 pr-2">
           {/* header */}
-          <div className="flex items-baseline gap-2 text-xs sm:text-sm">
+          <div className="flex items-baseline gap-1 text-xs sm:gap-2 sm:text-sm">
             {/* subreddit */}
             <Link to={`/r/${subreddit}`} className="z-10 font-bold">
               r/{subreddit}
             </Link>
             {/* author */}
             <span className="text-neutral-400">
-              Posted by{" "}
               <Link to={`/user/${author}`} className="z-10">
                 u/{author}
               </Link>

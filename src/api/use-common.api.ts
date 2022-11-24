@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import useSWR from "swr";
+import useSWRImmutable from "swr/immutable";
 
 const fetcher = async (url: string): Promise<any> => {
   const res = await fetch(url);
@@ -9,7 +9,7 @@ const fetcher = async (url: string): Promise<any> => {
 export default function useCommon() {
   const location = useLocation();
 
-  const { data, error } = useSWR(
+  const { data, error } = useSWRImmutable(
     "https://www.reddit.com" + location.pathname + ".json" + location.search,
     fetcher
   );
