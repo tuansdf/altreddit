@@ -1,6 +1,6 @@
 import { useEffect } from "preact/hooks";
 import { useSearchParams } from "react-router-dom";
-import usePosts from "/src/api/use-posts.api";
+import usePosts from "/src/api/hooks/use-posts.api";
 import PostList from "/src/features/post/post-list";
 import PostListPlaceholder from "/src/features/post/post-list-placeholder";
 import HorizontalMenu from "/src/features/shared/horizontal-menu";

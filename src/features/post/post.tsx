@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import { IPost } from "/src/features/post/post.type";
 import DisplayHtml from "/src/features/shared/display-html";
 
-interface IProps extends IPost {}
+interface IProps extends IPost {
+  isClamp?: boolean;
+}
 
 export default function Post({
   subreddit,
@@ -15,6 +17,7 @@ export default function Post({
   postUrl,
   title,
   postHint,
+  isClamp,
 }: IProps) {
   return (
     <Link to={postUrl} className="block hover:no-underline">
@@ -45,7 +48,10 @@ export default function Post({
           ) : null}
           {/* body text */}
           {bodyText ? (
-            <DisplayHtml className="prose-invert pr-2 text-sm sm:text-base">
+            <DisplayHtml
+              className="prose-invert pr-2 text-sm sm:text-base"
+              isClamp={isClamp}
+            >
               {bodyText || ""}
             </DisplayHtml>
           ) : null}

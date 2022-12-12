@@ -11,7 +11,7 @@ export default function PostList({ posts }: IProps) {
   return (
     <div className="space-y-2">
       {posts.map((post) => (
-        <Post {...post} />
+        <Post {...post} isClamp />
       ))}
     </div>
   );

@@ -6,7 +6,7 @@ const fetcher = async (url: string): Promise<any> => {
   return res.json();
 };
 
-export default function useCommon() {
+export default function useFetch() {
   const location = useLocation();
 
   const { data, error } = useSWRImmutable(

@@ -4,6 +4,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import IndexLayout from "/src/pages/index.layout";
+import PostPage from "/src/pages/post.page";
 import SubredditPage from "/src/pages/r_subreddit/subreddit.page";
 import SearchPage from "/src/pages/search.page";
 
@@ -22,6 +23,24 @@ const router = createBrowserRouter([
           { index: true, element: <SubredditPage /> },
           { path: "search", element: <SearchPage /> },
           { path: ":sort", element: <SubredditPage /> },
+          {
+            path: "comments",
+            children: [
+              {
+                path: ":postId",
+                children: [
+                  {
+                    index: true,
+                    element: <PostPage />,
+                  },
+                  {
+                    path: ":slug",
+                    element: <PostPage />,
+                  },
+                ],
+              },
+            ],
+          },
         ],
       },
       {

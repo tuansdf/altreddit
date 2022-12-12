@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import usePosts from "/src/api/use-posts.api";
+import usePosts from "/src/api/hooks/use-posts.api";
 import PostList from "/src/features/post/post-list";
 import PostListPlaceholder from "/src/features/post/post-list-placeholder";
 import HorizontalMenu from "/src/features/shared/horizontal-menu";
@@ -41,7 +41,7 @@ export default function SubredditPage() {
         getUrl={(match) => `/r/${subreddit}/${match}`}
       />
 
-      {!isLoading || !!data ? (
+      {!isLoading && !isError && !!data ? (
         <PostList posts={posts} />
       ) : (
         <PostListPlaceholder />

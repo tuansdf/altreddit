@@ -1,10 +1,10 @@
-import { ICommonData, ICommonResponse } from "/src/api/common.type";
-import { extractPost } from "/src/api/extractors";
-import useCommon from "/src/api/use-common.api";
+import useFetch from "/src/api/hooks/use-fetch";
+import { ICommonData, ICommonResponse } from "/src/api/types/common.type";
+import { extractPost } from "/src/api/utils/extractors";
 import { IPost } from "/src/features/post/post.type";
 
-export default function usePosts(): ICommonResponse<IPost[]> {
-  const { data, isError, isLoading } = useCommon();
+export default function usePosts(): ICommonResponse<ICommonData<IPost[]>> {
+  const { data, isError, isLoading } = useFetch();
 
   if (!data) {
     return {

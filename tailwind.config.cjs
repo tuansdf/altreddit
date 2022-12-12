@@ -16,5 +16,8 @@ module.exports = {
       info: colors.sky,
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/line-clamp"),
+  ],
 };
