@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import HlsPlayer from "../shared/hls-player";
 import { IPost } from "/src/features/post/post.type";
 import DisplayHtml from "/src/features/shared/display-html";
 
@@ -14,6 +15,7 @@ export default function Post({
   score,
   numComments,
   mediaSrc,
+  videoSrc,
   postUrl,
   title,
   postHint,
@@ -26,7 +28,7 @@ export default function Post({
           {score}
         </div>
 
-        <div className="flex flex-col gap-2 pr-2">
+        <div className="flex flex-1 flex-col gap-2 pr-2">
           {/* header */}
           <div className="flex items-baseline gap-1 text-xs sm:gap-2 sm:text-sm">
             {/* subreddit */}
@@ -44,12 +46,12 @@ export default function Post({
           </div>
           {/* title */}
           {title ? (
-            <div className="pr-2 font-medium sm:text-lg">{title}</div>
+            <h3 className="pr-2 font-medium sm:text-lg">{title}</h3>
           ) : null}
           {/* body text */}
           {bodyText ? (
             <DisplayHtml
-              className="prose-invert pr-2 text-sm sm:text-base"
+              className="prose-invert w-full pr-2 text-sm sm:text-base"
               isClamp={isClamp}
             >
               {bodyText || ""}
@@ -57,10 +59,14 @@ export default function Post({
           ) : null}
           {/* media */}
           {mediaSrc && postHint === "image" ? (
-            <div>
+            <div className="z-10 cursor-default">
               <img src={mediaSrc} alt="" />
             </div>
           ) : null}
+          {(videoSrc && postHint?.endsWith("video")) ?
+            <div className="z-10 cursor-default w-full">
+              <HlsPlayer url={videoSrc} />
+            </div> : null}
           {/* footer */}
           <div className="pr-2 text-xs text-neutral-400 sm:text-sm">
             <span>{numComments} comments</span>

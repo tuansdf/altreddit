@@ -13,7 +13,7 @@ export default function PostPage() {
     <div>
       {!isLoading && !isError && !!data ? (
         <div className="space-y-4">
-          <Post {...data.post} />
+          <Post {...post} />
           <CommentList comments={comments} />
         </div>
       ) : (

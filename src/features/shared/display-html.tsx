@@ -20,7 +20,7 @@ export default function DisplayHtml({
     <div
       dangerouslySetInnerHTML={{ __html: htmlContent }}
       className={clsx(
-        "prose whitespace-normal prose-a:text-primary-400",
+        "prose overflow-auto truncate whitespace-normal prose-p:whitespace-normal prose-a:whitespace-normal prose-a:text-primary-400",
         className,
         { "line-clamp-4": isClamp }
       )}

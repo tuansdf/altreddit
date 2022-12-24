@@ -8,6 +8,7 @@ export interface IPost {
   score?: string;
   numComments?: string;
   mediaSrc?: string;
+  videoSrc?: string;
   postUrl?: string;
   postHint?: "image" | "link";
 }

@@ -14,7 +14,8 @@ export const extractPost = (post: any): IPost => ({
   numComments: getCompactNumber(post["num_comments"]),
   postUrl: post.permalink,
   postHint: post["post_hint"],
-  mediaSrc: post["url_overriden_by_dest"],
+  mediaSrc: post["url_overridden_by_dest"],
+  videoSrc: post["media"]?.["reddit_video"]?.["hls_url"],
 });
 
 export const extractComment = (comment: any): IComment => ({
